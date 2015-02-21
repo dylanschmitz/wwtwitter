@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
 	def main_page
-		@workshop = "chelll"
+		@hometweetlink = "click here to tweet"
 	end
 end
