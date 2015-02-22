@@ -1,7 +1,7 @@
 New Tweets Page
 
 <%= simple_form_for @tweet do |f| %>
-  
+  <%= f.error_notification %>
   <%= f.input :content %>
   
   <%= f.button :submit %>

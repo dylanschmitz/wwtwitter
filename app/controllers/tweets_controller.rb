@@ -11,10 +11,11 @@ class TweetsController < ApplicationController
 			@tweet.user = current_user
 			if @tweet.save
 				flash[:success] = "you just did that"
+				redirect_to new_tweet_path
 			else
-				flash[:danger] = "hey man, I dont think you can actually do that.."
+				render 'new'
  			end
-			redirect_to new_tweet_path
+			
 	end
 
 	private
