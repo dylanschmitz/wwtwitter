@@ -1,10 +1,29 @@
-This is the index page which is also the feed page
+<h1> This is the FEED </h1>
+its also the index.html.erb file
+
+<br/>
 
 <br/>
 
 	<% @tweets.each do |tweet|%>
 		<ul class="list-group">
-			<li class="list-group-item"><%= tweet.user.email %> <br> <b><%= tweet.content %></b></li>
+			<li class="list-group-item">
+				<%= tweet.user.email %> 
+				<br> 
+				<b><%= tweet.content %></b>
+				<% if current_user.following?(tweet.user)%>
+					<!-- display an unfollow -->
+					<button type="button" class="btn btn-danger">
+						already following
+					</button>
+				<% else %>
+					<!-- display the follow button -->
+					<%= simple_form_for @relationship do |f|%>
+						<%= f.input :followed_id, as: :hidden, input_html: {value: tweet.user.id} %>
+						<%= f.button :submit, class: 'btn btn-primary', value: 'Follow' %>
+					<% end %>
+				<% end %>
+			</li>
 		</ul>
 	<% end %>
 

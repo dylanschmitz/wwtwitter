@@ -20,6 +20,9 @@ class TweetsController < ApplicationController
 
 	def index
 			@tweets = Tweet.all
+
+			@relationship = Relationship.new
+		 
 	end
 
 	private
