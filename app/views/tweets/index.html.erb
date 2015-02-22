@@ -1,8 +1,10 @@
 This is the index page which is also the feed page
 
 <br/>
-<ul>
+
 	<% @tweets.each do |tweet|%>
-		<li><%= tweet.content %></li>
+		<ul class="list-group">
+			<li class="list-group-item"><%= tweet.user.email %> <br> <b><%= tweet.content %></b></li>
+		</ul>
 	<% end %>
-</ul>
+
