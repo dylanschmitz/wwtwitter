@@ -1,0 +1,18 @@
+<h1>
+	Create Profile
+
+
+</h1>
+
+
+<%= simple_form_for @profile do |f| %>
+
+	<%= f.input :picture %>
+	<%= f.input :name %>
+	<%= f.input :bio %>
+
+	<%= f.button :submit, class: 'btn btn-primary', value: 'Create Profile' %>
+
+
+
+ <% end %>
