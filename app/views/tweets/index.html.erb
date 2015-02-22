@@ -1,0 +1,8 @@
+This is the index page which is also the feed page
+
+<br/>
+<ul>
+	<% @tweets.each do |tweet|%>
+		<li><%= tweet.content %></li>
+	<% end %>
+</ul>
